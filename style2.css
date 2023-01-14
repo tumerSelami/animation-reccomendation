@@ -1,0 +1,247 @@
+:root {
+    --space: linear-gradient(to top, #0199CB 0%, #1759A1 100%);
+    --dawn: linear-gradient(to top, #FFC214 0%, #FFA100 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: hsla(0, 0%, 25%, 0.6);
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Merriweather', sans-serif;
+    line-height: 1.5;
+    color: #f7f7f7;
+    background: linear-gradient(to bottom right, #7fe729, #a2ff55);
+}
+
+
+h1 {
+    font-family: 'Courgette', cursive;
+    font-size: 6em;        
+    text-align: center;
+    letter-spacing: .1em;
+    margin-bottom: .25em;
+    padding: .1em .3em;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to bottom right, #0199CB, #FFA100);
+    background-size: 200%;
+    transition: background-position 1s;
+    animation: color 4s ease-in-out infinite alternate;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.sub {
+    font-size: 1.6rem;
+}
+
+.intro {
+    height: 95vh;
+}
+
+h2, 
+h3 {
+    font-family: 'Courgette', cursive;
+    margin-bottom: .5em;
+}
+
+p {
+    line-height: 2;
+}
+
+nav {
+    background-color: #FFC214;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    margin: 1em;
+    border-radius: 1em 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+li a {
+    text-decoration: none;
+    color: #f7f7f7;
+}
+
+li a:hover {
+    color: #0199CB;
+    background-color: #f7f7f7;
+    border-radius: .25em;
+    padding: .2em .4em;
+}
+
+.brand {
+    font-weight: 800;
+
+}
+
+header {
+    height: 80%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    text-align: center;    
+    max-width: 50%;
+}
+
+section {
+    border-radius: 1em 2em;
+    max-width: 95%;
+    margin: 5vh auto;
+    padding: 1em;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr; /*repeat(3, 1fr)*/
+    grid-template-rows: .8fr 1fr;
+}
+
+
+section:nth-of-type(odd) {
+    background-image: var(--space);
+}
+
+.even {
+    background-image: var(--dawn);
+}
+
+section > div {
+    padding: 1.2em;
+}
+
+.poster {
+    max-width: 100%;
+    border-radius: 1em 2em;
+    grid-row: 1 / 3;
+}
+
+.info {
+    grid-column: 2 / 4;
+}
+
+.watch {
+    background-color: #1759A1;
+    padding: .5em 1em;
+    margin-top: 2em;
+    border-radius: 1em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+button {
+    padding: .5em 1em;
+    border-radius: 1em 1.5em;
+    border-style: none;
+    color: #f7f7f7;
+    background-color: #0199CB;
+    font-size: 1.2rem;
+    transition: .5s;
+}
+
+.even button {
+    background-color: #FFC214;
+}
+
+.even .watch {
+    background-color: #FFA100;
+}
+
+button:hover {
+    background-color: aliceblue;
+    color: #181818;    
+}
+
+iframe {
+    aspect-ratio: 16 / 9;
+    border-radius: 1em 1.5em;
+    width: 100%;
+}
+
+@media (max-width: 1344px) {
+    section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr .5fr;
+    }
+
+    .info {
+        grid-row: 1 / 3;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 815px) {
+    section {
+        grid-template-rows: 1fr .5fr .5fr .5fr;
+    }
+
+    .tralier {
+        grid-column: 3 / -3
+    }
+
+    .extra {
+        grid-column: -3 / -1;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+    header p {
+        max-width: 80%;
+}
+
+}
+
+@media (max-width: 635px) {
+    section {
+       display: flex;
+       flex-direction: column;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    nav ul {
+        display: block;
+    }
+    nav {
+        align-items: center;
+    }
+    .intro {
+        height: 70vh;
+    }
+}
